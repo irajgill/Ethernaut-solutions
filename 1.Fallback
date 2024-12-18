@@ -1,0 +1,3 @@
+The goal is to become the owner of the contract.
+we can see that the owner can be reset by calling the fallback function, i.e., we just do an ether transfer to the contract (empty data field in the transaction). 
+To pass the checks, we first need to call contribute once.
